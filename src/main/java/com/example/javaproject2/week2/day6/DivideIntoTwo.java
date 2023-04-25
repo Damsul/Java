@@ -1,4 +1,4 @@
-package com.example.javaproject2.week2;
+package com.example.javaproject2.week2.day6;
 
 public class DivideIntoTwo {
 

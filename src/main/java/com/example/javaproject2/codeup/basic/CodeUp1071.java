@@ -9,7 +9,7 @@ public class CodeUp1071 {
     public static void main(String[] args) {
 //        int num = sc.nextInt();
 //        func(num);
-        numPrint();
+        numPrint2();
     }
 
     public static void numPrint() {
@@ -19,6 +19,16 @@ public class CodeUp1071 {
 
             System.out.println(num);
         }
+    }
+
+    public static void numPrint2() {
+        int num;
+        do {
+            num = sc.nextInt();
+
+            if (num == 0) continue;
+            System.out.println(num);
+        } while (num != 0);
     }
 
     public static void func(int n) {

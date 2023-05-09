@@ -9,7 +9,7 @@ public class ReversePyramid {
     }
 
     public String makeALint(int h, int i) {
-        return String.format("%s%s\n", spaceChar.repeat(i), "*".repeat(h + 3 - (i * 2)));
+        return String.format("%s%s\n", spaceChar.repeat(i), "*".repeat(2 * (h - i) - 1));
     }
     public void printPyramid(int h, int i) {
         System.out.printf(makeALint(h, i));

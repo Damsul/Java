@@ -14,20 +14,24 @@ public class DrawDiamond {
         return ans;
     }
 
+    public static String makeALint(int h, int i) {
+        int pivot = h / 2;
+        if (i <= pivot) {
+//            System.out.printf("%s", getRepeatedSymbolFor(" ", pivot - i));
+//            System.out.printf("%s\n", getRepeatedSymbolFor("*", 2 * i + 1));
+            return String.format("%s%s\n", getRepeatedSymbol(" ", pivot - i), getRepeatedSymbol("*", 2 * i + 1));
+
+        } else {
+//            System.out.printf("%s", getRepeatedSymbol(" ", i - pivot));
+//            System.out.printf("%s\n", getRepeatedSymbol("*", 2 * (h - i) - 1));
+            return String.format("%s%s\n", getRepeatedSymbolFor(" ", i - pivot), getRepeatedSymbolFor("*", 2 * (h - i) - 1));
+        }
+    }
+
     public static void main(String[] args) {
         int h = 9;
-        int pivot = h / 2; // 피라미드 -> 멱피라미드 분기점
-
         for (int i = 0; i < h; i++) {
-            if (i <= pivot) {
-//                System.out.printf("%s", getRepeatedSymbol(" ", pivot - i));
-//                System.out.printf("%s\n", getRepeatedSymbol("*", 2 * i + 1));
-                System.out.printf("%s", getRepeatedSymbolFor(" ", pivot - i));
-                System.out.printf("%s\n", getRepeatedSymbolFor("*", 2 * i + 1));
-            } else {
-                System.out.printf("%s", getRepeatedSymbol(" ", i - pivot));
-                System.out.printf("%s\n", getRepeatedSymbol("*", 2 * (h - i) - 1));
-            }
+            System.out.print(makeALint(h, i));
         }
     }
 }

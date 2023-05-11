@@ -5,6 +5,6 @@ public class UserFactoryTest {
     public static void main(String[] args) {
         UserFactory userFactory = new UserFactory();
         User user = userFactory.getAdultUser();
-        System.out.println(user.age);
+        System.out.println(user.getAge());
     }
 }

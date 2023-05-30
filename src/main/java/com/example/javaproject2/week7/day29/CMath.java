@@ -6,12 +6,8 @@ import java.util.List;
 public class CMath {
 
     public static boolean isPrime(int num) {
-        int cnt = 0;
-        for (int i = 1; i < num; i++) {
-            if (num % i == 0)
-                cnt++;
-        }
-        return cnt < 2;
+        int cnt = factorsOf(num).size();
+        return cnt == 1;
     }
 
     public static void printIsPrime(int num) {
@@ -20,29 +16,27 @@ public class CMath {
     }
 
     public static boolean isPerfectNumber(int num) {
-        List<Integer> factors = new ArrayList<>();
-        for (int i = 1; i < num; i++) {
-            if (num % i == 0)
-                factors.add(i);
-        }
-
-        int sum = 0;
-        for (int i = 0; i < factors.size(); i++) {
-            sum += factors.get(i);
-        }
-
+        List<Integer> factors = factorsOf(num);
+        int sum = factors.stream().mapToInt(Integer::intValue).sum();
         return num == sum;
     }
     public static void printPerfectNumber(int num) {
         System.out.println(num + " -> " + isPerfectNumber(num));
     }
 
-    public static String factors(int num) {
+    public static List<Integer> factorsOf(int num) {
         List<Integer> factors = new ArrayList<>();
         for (int i = 1; i < num; i++) {
             if (num % i == 0)
                 factors.add(i);
         }
-        return factors.toString();
+        return factors;
+    }
+    public static String factors(int num) {
+        return factorsOf(num).toString();
+    }
+
+    public static void printFactors(int num) {
+        System.out.println(factors(num));
     }
 }

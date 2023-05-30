@@ -13,11 +13,12 @@ public class Main {
 //        Game369.print369(333);
 //        Game369.print369(3333);
 
-        CMath.printIsPrime(3);
-        CMath.printIsPrime(7);
-        CMath.printIsPrime(10);
-        CMath.printPerfectNumber(6);
-        CMath.printPerfectNumber(28);
-        CMath.printPerfectNumber(100);
+//        CMath.printIsPrime(3);
+//        CMath.printIsPrime(7);
+//        CMath.printIsPrime(10);
+//        CMath.printPerfectNumber(6);
+//        CMath.printPerfectNumber(28);
+//        CMath.printPerfectNumber(100);
+        CMath.printFactors(16);
     }
 }

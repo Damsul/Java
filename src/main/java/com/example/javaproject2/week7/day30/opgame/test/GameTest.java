@@ -20,4 +20,16 @@ public class GameTest {
         assertEquals("한번 더 해보자", game.getCheeringUpMsg());
         assertEquals(true, game.inAnswer(2));
     }
+
+    @Test
+    public void testRandom() {
+        System.out.println((int)(Math.random() * 10));
+    }
+
+    @Test
+    public void testSumMax() {
+        int a = (int)(Math.random() * 10);
+        int b = 9 - a;
+        assertTrue(a + b < 10);
+    }
 }

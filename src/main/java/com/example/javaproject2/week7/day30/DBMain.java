@@ -1,15 +1,39 @@
 package com.example.javaproject2.week7.day30;
 
 import com.example.javaproject2.week7.day30.model.BaseDAO;
+import com.example.javaproject2.week7.day30.model.Person;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBMain extends BaseDAO {
     public static void main(String[] args) {
         DBMain dbMain = new DBMain();
         dbMain.initPerson();
-        dbMain.insertPerson("leo");
-        dbMain.insertPerson("yui");
-        dbMain.insertPerson("wow");
+        System.out.println(dbMain.insertPerson("leo"));
+        System.out.println(dbMain.insertPerson("yui"));
+        List<Person> personList = dbMain.findAllPerson();
+        System.out.println(personList);
+    }
+
+    private List<Person> findAllPerson() {
+        List<Person> result = new ArrayList<>();
+        String sql = "select id, name from person";
+        try {
+            getConn();
+            psmt = conn.prepareStatement(sql);
+            rs = psmt.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                result.add(new Person(id, name));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            close();
+        }
+        return result;
     }
 
     private int insertPerson(String name) {

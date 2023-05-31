@@ -5,6 +5,7 @@ import com.example.javaproject2.week7.day30.model.Person;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class DBMain extends BaseDAO {
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class DBMain extends BaseDAO {
         System.out.println(dbMain.findByNamePerson("bab"));
     }
 
-    private Person findByNamePerson(String pname) {
+    private Optional<Person> findByNamePerson(String pname) {
         String sql = "select id, name from person where name = ?";
         try {
             getConn();
@@ -27,14 +28,14 @@ public class DBMain extends BaseDAO {
             if (rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-                return new Person(id, name);
+                return Optional.of(new Person(id, name));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
             close();
         }
-        return null;
+        return Optional.empty();
     }
 
     private List<Person> findAllPerson() {

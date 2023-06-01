@@ -28,8 +28,9 @@ public class GameTest {
 
     @Test
     public void testSumMax() {
-        int a = (int)(Math.random() * 10);
-        int b = 9 - a;
-        assertTrue(a + b < 10);
+        int max = 10;
+        int a = (int)(Math.random() * max);
+        int b = max - 1 - a;
+        assertTrue(a + b < max);
     }
 }

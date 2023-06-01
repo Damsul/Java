@@ -3,13 +3,14 @@ package com.example.javaproject2.week7.day30_31.opgame.test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import com.example.javaproject2.week7.day30_31.opgame.servie.OpGame;
+import com.example.javaproject2.week7.day30_31.opgame.servie.PlusOperatorLevelOne;
 import org.junit.jupiter.api.Test;
 
 public class GameTest {
 
     @Test
     public void test() {
-        OpGame game = new OpGame();
+        OpGame game = new OpGame(new PlusOperatorLevelOne());
         game.makeQuestion();
         String question = game.getQuestion();
 

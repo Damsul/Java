@@ -1,8 +1,8 @@
-package com.example.javaproject2.week7.day30.opgame.test;
+package com.example.javaproject2.week7.day30_31.opgame.test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.example.javaproject2.week7.day30.opgame.servie.OpGame;
+import com.example.javaproject2.week7.day30_31.opgame.servie.OpGame;
 import org.junit.jupiter.api.Test;
 
 public class GameTest {

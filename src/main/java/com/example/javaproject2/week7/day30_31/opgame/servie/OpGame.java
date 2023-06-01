@@ -1,4 +1,4 @@
-package com.example.javaproject2.week7.day30.opgame.servie;
+package com.example.javaproject2.week7.day30_31.opgame.servie;
 
 public class OpGame {
 

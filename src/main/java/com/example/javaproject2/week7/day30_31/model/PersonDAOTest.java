@@ -1,4 +1,4 @@
-package com.example.javaproject2.week7.day30.model;
+package com.example.javaproject2.week7.day30_31.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 

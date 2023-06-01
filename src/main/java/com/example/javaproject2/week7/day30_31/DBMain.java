@@ -1,8 +1,8 @@
-package com.example.javaproject2.week7.day30;
+package com.example.javaproject2.week7.day30_31;
 
-import com.example.javaproject2.week7.day30.model.BaseDAO;
-import com.example.javaproject2.week7.day30.model.Person;
-import com.example.javaproject2.week7.day30.model.PersonDAO;
+import com.example.javaproject2.week7.day30_31.model.BaseDAO;
+import com.example.javaproject2.week7.day30_31.model.Person;
+import com.example.javaproject2.week7.day30_31.model.PersonDAO;
 import java.util.List;
 
 public class DBMain extends BaseDAO {
